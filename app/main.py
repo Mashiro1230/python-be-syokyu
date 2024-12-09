@@ -77,10 +77,12 @@ class ResponseTodoList(BaseModel):
     created_at: datetime = Field(title="datetime that the item was created")
     updated_at: datetime = Field(title="datetime that the item was updated")
 
+# echoのエンドポイントを追加
 @app.get("/echo", tags=["echo"])
 def get_echo(message: str, name: str):
     return {"Message": f"{message} {name}!"}
 
+# healthのエンドポイントを追加
 @app.get("/health", tags=["System"])
 def get_health():
     return {"status": "ok"}
