@@ -77,7 +77,6 @@ class ResponseTodoList(BaseModel):
     created_at: datetime = Field(title="datetime that the item was created")
     updated_at: datetime = Field(title="datetime that the item was updated")
 
-
 @app.get("/echo", tags=["echo"])
 def get_echo(message: str, name: str):
     return {"Message": f"{message} {name}!"}
